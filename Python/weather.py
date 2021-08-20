@@ -1,5 +1,4 @@
 #Conditional statements on to stay inside or go outside depending on temperature
-
 #Using or operator
 temperature1 = 75
 if temperature1 > 80 or temperature1 < 60:
