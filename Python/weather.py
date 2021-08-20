@@ -25,7 +25,6 @@ else:
 
 #boolean
 raining = True
-
 if raining:
     print("Stay inside!")
 
