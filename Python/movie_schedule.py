@@ -16,3 +16,5 @@ if showtime == None:
     print("The requested movie isn't playing.")
 else:
     print(movie, "is playing at: ", showtime)
+
+#Utilizing python dict
