@@ -22,11 +22,12 @@ def get_weather_desc_and_temp():
             'temp_max': max_temp
             }
 
+#declaring main function
 def main():
     #Print the results
     weather_dict = get_weather_desc_and_temp()
     print("Today's forecast is: ", weather_dict.get('description'))
     print("Today's temperature min is: ", weather_dict.get('temp_min'))
     print("Today's temperature max is: " , weather_dict.get('temp_max'))
-    
+
 main()
