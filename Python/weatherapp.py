@@ -3,19 +3,30 @@
 
 import requests
 
-api_key = 'de872ce5d28d450bb9d791318be16ca8'
-city = 'Orlando'
-url = "http://api.openweathermap.org/data/2.5/weather?q=" +city +"&appid=" + api_key + "&units=imperial"
+def get_weather_desc_and_temp():
+    
+    api_key = 'de872ce5d28d450bb9d791318be16ca8'
+    city = 'Orlando'
+    url = "http://api.openweathermap.org/data/2.5/weather?q=" +city +"&appid=" + api_key + "&units=imperial"
 
-request = requests.get(url)
-json = request.json()
+    request = requests.get(url)
+    json = request.json()
 
 
-description = json.get("weather")[0].get("description")
-print("Today's forecast is: ", description)
+    description = json.get("weather")[0].get("description")
+    min_temp = json.get("main").get("temp_min")
+    max_temp = json.get("main").get("temp_max")
+    
+    return {'description': description,
+            'temp_min': min_temp,
+            'temp_max': max_temp
+            }
 
-min_temp = json.get("main").get("temp_min")
-print("Today's temperature min is: ", min_temp)
-
-max_temp = json.get("main").get("temp_max")
-print("Today's temperature max is: " , max_temp)
+def main():
+    #Print the results
+    weather_dict = get_weather_desc_and_temp()
+    print("Today's forecast is: ", weather_dict.get('description'))
+    print("Today's temperature min is: ", weather_dict.get('temp_min'))
+    print("Today's temperature max is: " , weather_dict.get('temp_max'))
+    
+main()
