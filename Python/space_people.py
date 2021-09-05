@@ -1,5 +1,5 @@
 #Retrieves data from internet, lists current people in space
-#Http Request to web server
+#Http Request to web server for space data
 import requests
 
 response = requests.get('http://api.open-notify.org/astros.json')
